@@ -1,0 +1,28 @@
+<%-include('partials/navigation')%>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" class="form-control form-control-lg" placeholder="Escribe tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email"  class="form-control form-control-lg" placeholder="Escribe tu email">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" name="telefono" class="form-control form-control-lg" placeholder="Escribe tu número de teléfono">
+            </div>
+            <button type="submit" class="btn btn-light btn-block mt-2">Guardar usuario</button>
+            <a href="/" class="btn btn-danger btn-block mt-2">Cancelar</a>        
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

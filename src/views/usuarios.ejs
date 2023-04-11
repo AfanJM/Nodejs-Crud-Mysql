@@ -1,0 +1,54 @@
+<%-include('partials/navigation')%>
+
+<div class="container">
+    <div class="row">
+      <div class="col"> 
+        <h1 class="text-center mb-5 text-dark font-weight-bold ">Lista de usuarios</h1>
+      </div>
+    </div>
+  </div>
+         
+
+<div class="container ">
+  <div class="table-responsive table-responsive-sm">
+      <table class="table table-dark table-bordered table-hover  table-xl p-3">
+          <thead class="text-center">
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <% if (usuarios) { %> <% for(var i = 0; i < usuarios.length; i++) {
+          %>
+              <tr>
+                  <td class="px-4" ><%= usuarios[i].id %></td>
+                  <td class="px-4" ><%= usuarios[i].nombre %></td>
+                  <td class="px-4"><%= usuarios[i].email %></td>
+                  <td class="px-4"><%= usuarios[i].telefono %></td>
+                  <td class="d-flex gap-2">
+                      <a href="/update/<%= usuarios[i].id %>" class="btn btn-info">
+                          editar
+                      </a>
+                      <a href="/delete/<%= usuarios[i].id %>" class="btn btn-danger" onclick="return confirm('¿Estás seguro que quieres borrar este usuario?')">
+                          Borrar
+                      </a>
+                  </td>
+              </tr>
+              <% } %> <% } %>
+
+              <!-- más filas aquí -->
+          </tbody>
+      </table>
+  </div>
+</div>
+
+
+
+
+
+
